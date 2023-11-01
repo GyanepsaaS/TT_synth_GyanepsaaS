@@ -125,7 +125,9 @@ module signal_gen
     logic [ACCUMULATOR_BITS-1:0] prev_accumulator;
     logic tone_freq;
     logic dout_tmp;
+    
     assign tone_freq = 1<<tone_freq_bin;
+    assign accumulator_msb = accumulator[ACCUMULATOR_BITS-1];
 
     logic [OUTPUT_BITS-1:0] triangle_dout;
     triangle
