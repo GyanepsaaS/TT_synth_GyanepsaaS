@@ -26,6 +26,7 @@ module tt_um_synth_GyanepsaaS
 
     //zeroing unused
     assign uio_out = 8'b0;
+    assign uo_out[7:1] = 7'b0;
 
     assign not_rst = ~rst_n;
     soundproc sound1 (.waveform_enable(ui_in[0]), .main_clk(clk), .sample_clk(ui_in[2]),
