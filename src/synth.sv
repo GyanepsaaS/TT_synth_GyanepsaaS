@@ -8,7 +8,7 @@
 //      amplitude_modulator modulates signal with envelope
 //  dac converts to analogue
 
-module synth
+module tt_um_synth_GyanepsaaS
     (input  wire [7:0] ui_in,    // Dedicated inputs - connected to the input switches
     output wire [7:0] uo_out,   // Dedicated outputs - connected to the 7 segment display
     input  wire [7:0] uio_in,   // IOs: Bidirectional Input path
@@ -29,7 +29,7 @@ module synth
     dac dac1 (.din(dout), .clk(clk), .dout(uo_out[0]));
 
 
-endmodule: synth
+endmodule: tt_um_synth_GyanepsaaS
 
 //Overall sound processing module
 //Combines signal generation and amplitude modulating it with envelope
