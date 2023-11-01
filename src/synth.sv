@@ -12,6 +12,7 @@ module tt_um_synth_GyanepsaaS
     (input  wire [7:0] ui_in,    // Dedicated inputs - connected to the input switches
     output wire [7:0] uo_out,   // Dedicated outputs - connected to the 7 segment display
     input  wire [7:0] uio_in,   // IOs: Bidirectional Input path
+    output wire [7:0] uio_oe,
     input  wire       ena,      // will go high when the design is enabled
     input  wire       clk,      // clock
     input  wire       rst_n     // reset_n - low to reset
@@ -19,6 +20,8 @@ module tt_um_synth_GyanepsaaS
 
     logic not_rst;
     logic signed  [11:0] dout;
+
+    uio_oe = 8'b0;
 
     assign not_rst = ~rst_n;
     soundproc sound1 (.waveform_enable(ui_in[0]), .main_clk(clk), .sample_clk(ui_in[2]),
