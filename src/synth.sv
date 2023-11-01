@@ -32,7 +32,7 @@ module tt_um_synth_GyanepsaaS
     soundproc sound1 (.waveform_enable(ui_in[0]), .main_clk(clk), .sample_clk(ui_in[2]),
                         .rst(not_rst), .hold(ui_in[3]), .tone_freq_bin(ui_in[7:4]),
                         .attack(uio_in[7:6]), .decay(uio_in[5:4]),
-                        .sustain(uio_in[3:2]), .rel(uio_in[1:0]));
+                      .sustain(uio_in[3:2]), .rel(uio_in[1:0]), .dout(dout));
 
     dac dac1 (.din(dout), .clk(clk), .dout(uo_out[0]));
 
