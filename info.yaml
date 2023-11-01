@@ -7,7 +7,6 @@ project:
 # Source files must be in ./src and you must list each source file separately
   source_files:        
     - synth.sv
-    - exp_lookup_table.rom
   top_module:  "tt_um_synth_GyanepsaaS"      # Put the name of your top module here, must start with "tt_um_". Make it unique by including your github username
 
 # How many tiles your design occupies? A single tile is about 167x108 uM.
