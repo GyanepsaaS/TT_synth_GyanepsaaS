@@ -29,7 +29,7 @@ module tt_um_synth_GyanepsaaS
     assign uo_out[7:1] = 7'b0;
 
     assign not_rst = ~rst_n;
-    soundproc sound1 (.waveform_enable(ui_in[0]), .main_clk(clk), .sample_clk(ui_in[2]),
+    soundproc sound1 (.waveform_enable(ui_in[0]), .main_clk(clk), .sample_clk(clk),
                         .rst(not_rst), .hold(ui_in[3]), .tone_freq_bin(ui_in[7:4]),
                         .attack(uio_in[7:6]), .decay(uio_in[5:4]),
                       .sustain(uio_in[3:2]), .rel(uio_in[1:0]), .dout(dout));
@@ -45,7 +45,7 @@ module soundproc
   #(parameter OUTPUT_BITS = 12,
   parameter FREQ_BITS = 4,
   parameter ACCUMULATOR_BITS = 24,
-  parameter SAMPLE_CLK_FREQ = 44100)
+  parameter SAMPLE_CLK_FREQ = 10000000)
 
   (input [FREQ_BITS-1:0] tone_freq_bin,
   input waveform_enable,
@@ -191,7 +191,7 @@ endmodule: triangle
 // envelope generation
 // uses FSMD to find states
 module envelope_gen #(
-  parameter SAMPLE_CLK_FREQ = 44100,
+  parameter SAMPLE_CLK_FREQ = 10000000,
   parameter ACCUMULATOR_BITS = 26
 )
 (
